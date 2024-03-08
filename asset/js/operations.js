@@ -1,16 +1,3 @@
-const n1 = document.getElementById('first');
-const n2 = document.getElementById('second');
-const ok = document.getElementById('ok');
-const result = document.getElementById('result');
-
-ok.addEventListener("click", (event) => {
-    let a = n1.valueAsNumber;
-    let b = n2.valueAsNumber;
-    console.log(n1, n2, ok, result);
-    result.innerText = addition(a, b);
-});
-
-
 function addition(augend, addend) {
     return augend + addend;
 }

@@ -59,6 +59,7 @@ body {
 
 #inner {
   width: 50%;
+  max-width: 40rem;
   height: fit-content;
 
   box-shadow: 0.2rem 0.2rem var(--calculator-border-color);
@@ -108,9 +109,7 @@ body {
   width: 100%;
 
   display: flex;
-  /* flex-wrap: wrap; */
-  /* gap: 1rem; */
-  /* justify-content: space-evenly; */
+  gap: 1rem;
 }
 
 #numbers,

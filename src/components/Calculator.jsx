@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "./Button";
 
 export default function Calculator() {
@@ -20,6 +20,8 @@ export default function Calculator() {
   const buttonsMiddle = ["M+", "M-", "MRC", "GT", "CE"];
   const buttonsTop = ["ON/AC"];
 
+  const [screenText, setScreenText] = useState("0");
+
   function getButtons(buttons) {
     return buttons.map((button, key) => <Button key={key} title={button} />);
   }
@@ -27,7 +29,7 @@ export default function Calculator() {
   return (
     <>
       <div id="calculator">
-        <div id="screen"></div>
+        <div id="screen">{screenText}</div>
         <div id="buttons">
           <div id="top">{getButtons(buttonsTop)}</div>
           <div id="middle">{getButtons(buttonsMiddle)}</div>

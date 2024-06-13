@@ -1,0 +1,127 @@
+* {
+    padding: 0;
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: sans-serif;
+    font-size: 1rem;
+    color: black;
+}
+
+#root {
+    width: 100vw;
+    height: 100vh;
+    padding: 5rem 30rem;
+}
+
+#calculator {
+    width: 100%;
+    height: 100%;
+    /* background-color: aquamarine; */
+    border: 2px solid black;
+    padding: 2rem;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+#screen {
+    width: 100%;
+    height: 20%;
+    /* background-color: brown; */
+    border: 2px solid black;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+
+#buttons {
+    width: 100%;
+    height: 80%;
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+#top {
+    width: 100%;
+    height: calc(1/7 * 100%);
+    /* background-color: red; */
+}
+
+#middle {
+    width: 100%;
+    height: calc(1/7 * 100%);
+    /* background-color: blueviolet; */
+    display: flex;
+    gap: 0.5rem;
+}
+
+#bottom {
+    width: 100%;
+    height: calc(5/7 * 100%);
+    /* background-color: orange; */
+    display: flex;
+    gap: 0.5rem;
+}
+
+#bottom-left {
+    width: 60%;
+    height: 100%;
+    /* background-color: orangered; */
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+
+#bottom-right {
+    width: 40%;
+    height: 100%;
+    /* background-color: green; */
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+    gap: 0.5rem;
+}
+
+.button {
+    border: 2px solid black;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+
+#top .button {
+    /* 1/5 * width without the gaps */
+    width: calc((100% - 4 * 0.5rem) / 5);
+    float: right;
+}
+
+#bottom-left .button {
+    width: calc((100% - 2 * 0.5rem) / 3);
+    height: calc((100% - 3 * 0.5rem) / 4);
+}
+
+#bottom-right .button {
+    width: calc((100% - 1 * 0.5rem) / 2);
+    height: calc((100% - 3 * 0.5rem) / 4);
+}

@@ -1,11 +1,5 @@
-import React from "react";
-import Credits from "./pages/Credits";
-import Calculator from "./components/Calculator";
+const App = () => {
+  return <>Oi</>;
+};
 
-export default function App() {
-  return (
-    <>
-      <Calculator />
-    </>
-  );
-}
+export default App;

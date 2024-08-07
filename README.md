@@ -1,3 +1,3 @@
 # calculator
 
-An online simple calculator made with React.
+A simple web calculator made with React.

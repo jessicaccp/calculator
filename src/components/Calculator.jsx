@@ -1,33 +1,43 @@
 import Keypad from "components/Keypad";
 import Display from "components/Display";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { evaluate } from "mathjs";
 
 const Calculator = () => {
+  const [stack, setStack] = useState([]);
   const [display, setDisplay] = useState(0);
-  const [numbers, setNumbers] = useState([0]);
-  const [operator, setOperator] = useState(null);
+  const [result, setResult] = useState(null);
+
+  useEffect(() => {
+    setDisplay(result === null ? stack : `${stack.join("")} = ${result}`);
+  }, [stack, result]);
 
   const handlers = {
-    number: (event) => {
-      setNumbers([...numbers, event.target.value]);
-      setDisplay(event.target.value);
+    button: (event) => {
+      if (result === null) setStack([...stack, event.target.value]);
+      else {
+        setStack([event.target.value]);
+        setResult(null);
+      }
     },
-    operator: (event) => {
-      setOperator(event.target.value);
-      setDisplay(event.target.value);
+    equal: () => {
+      try {
+        setResult(evaluate(stack.join("")));
+      } catch (error) {
+        setResult("Error");
+      }
     },
     clear: () => {
-      setNumbers([0]);
-      setOperator(null);
-      setDisplay(0);
+      setStack([]);
+      setResult(null);
     },
   };
 
   return (
-    <>
+    <div id="calculator" className="flex flex-col h-1/2 w-1/2">
       <Display value={display} />
       <Keypad handlers={handlers} />
-    </>
+    </div>
   );
 };
 

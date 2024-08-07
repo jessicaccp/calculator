@@ -1,5 +1,11 @@
+import Calculator from "components/Calculator";
+
 const App = () => {
-  return <>Oi</>;
+  return (
+    <>
+      <Calculator />
+    </>
+  );
 };
 
 export default App;

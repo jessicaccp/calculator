@@ -34,7 +34,10 @@ const Calculator = () => {
   };
 
   return (
-    <div id="calculator" className="flex flex-col h-1/2 w-1/2">
+    <div
+      id="calculator"
+      className="lg:max-h-[600px] lg:max-w-[600px] h-full w-full flex flex-col p-1 md:p-3 lg:p-4"
+    >
       <Display value={display} />
       <Keypad handlers={handlers} />
     </div>
